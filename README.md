@@ -12,3 +12,7 @@ To run:
 
 **phpMyAdmin** 
 1. Import the realtyrealm.sql
+
+
+**AS FOR NOW**
+to run and see the website: http://localhost/mehhh/Boundary/SystemAdmin/index.php
