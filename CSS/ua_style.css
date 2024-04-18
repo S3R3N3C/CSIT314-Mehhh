@@ -1,0 +1,52 @@
+/* Table styling */
+/* Table styling */
+#profileTable,
+#userTable {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11.5px;
+    color: #800000;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#profileTable th,
+#profileTable td,
+#userTable th,
+#userTable td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #777;
+}
+
+/* Apply font family to links in top navigation */
+.topnav a1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Login form styling */
+.white-box {
+  background-color: white;
+  color: black;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  margin-top: 5%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+body {
+  padding-top: 0%;
+  padding-bottom: 0%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-image: url("Images/background.jpg");
+  overflow: auto;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
