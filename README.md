@@ -17,3 +17,4 @@ To run:
 
 **AS FOR NOW**
 to run and see the website: http://localhost/mehhh/Boundary/SystemAdmin/index.php
+* TAKE NOTE: CSS might not work in CHROME so need to switch browser (EDGE, FIREFOX, etc.)
