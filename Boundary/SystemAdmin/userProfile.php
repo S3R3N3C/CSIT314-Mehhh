@@ -43,15 +43,6 @@ if (isset($_POST['search'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,800;1,100;1,400&display=swap" rel="stylesheet">
-    <style>
-        th,
-        td {
-            text-align: center;
-            padding: 8px;
-            border-bottom: 1px solid #777;
-        }
-
-    </style>
 </head>
 <div class="white-box">
     <section>
@@ -99,14 +90,13 @@ if (isset($_POST['search'])) {
         </tr>
         <?php foreach ($userProfiles as $userprofile) { ?>
             <tr>
-                <td contenteditable="true" id="profileTable" class="CMtable"><?php echo is_array($userprofile) ? $userprofile['profilename'] : $userprofile; ?></td>
-                <td contenteditable="true" id="profileTable" class="CMtable"><?php echo is_array($userprofile) ? $userprofile['status'] : $userprofile; ?></td>
+                <td contenteditable="true" id="profileTable" class="RRtable"><?php echo is_array($userprofile) ? $userprofile['profilename'] : $userprofile; ?></td>
+                <td contenteditable="true" id="profileTable" class="RRtable"><?php echo is_array($userprofile) ? $userprofile['status'] : $userprofile; ?></td>
                 <td>
                     <a href="updateUserProfile.php?userprofile_id=<?php echo $userprofile['userprofile_id']; ?>&profilename=<?php echo $userprofile['profilename']; ?>">Update</a> |
                     <a href="suspendUserProfile.php?userprofile_id=<?php echo $userprofile['userprofile_id']; ?>" onClick="return confirm('Are you sure you want to suspend?')">Suspend</a> |
                     <a href="activateUserProfile.php?userprofile_id=<?php echo $userprofile['userprofile_id']; ?>" onClick="return confirm('Are you sure you want to activate?')">Activate</a>  |
                     <a href="deleteUserProfile.php?userprofile_id=<?php echo $userprofile['userprofile_id']; ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
-
                 </td>
             </tr>
         <?php } ?>

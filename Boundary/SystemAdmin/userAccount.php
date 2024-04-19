@@ -48,16 +48,7 @@ if (isset($_POST['search'])) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,800;1,100;1,400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <style>
-        th,
-        td {
-            text-align: center;
-            padding: 8px;
-            border-bottom: 1px solid #777;
-        }
-
-    </style>
-
+    
 </head>
 
 <body>
@@ -98,7 +89,7 @@ if (isset($_POST['search'])) {
         <table id="userTable">
             <thead>
                 <tr>
-                    <table class="table table-condensed table-striped CMtable" id="profileTable" style="font-size: 11.5px; width:100%;">
+                    <table class="RRtable" id="profileTable" style="width:100%">
                         <tr>
                             <th>Name</th>
                             <th>Username</th>
