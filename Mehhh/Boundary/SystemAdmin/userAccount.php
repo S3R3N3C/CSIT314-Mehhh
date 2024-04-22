@@ -99,8 +99,8 @@ if (isset($_POST['search'])) {
                 <tr>
                     <table class="RRtable" id="profileTable" style="width:100%">
                         <tr>
-                            <th>Name</th>
-                            <th>Username</th>
+                            <th>Full Name</th>
+                            <th>User Name</th>
                             <th>Password</th>
                             <th>Profile</th>
                             <th>Status</th>
@@ -121,11 +121,22 @@ if (isset($_POST['search'])) {
                             echo "</tr>";
                         }
                         ?>
+                                
+                        <tfoot>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>User Name</th>
+                                <th>Password</th>
+                                <th>Profile</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
                     </table>
 
                 </tr>
-            </thead>
 
+            </thead>
         </table>
         <br>
     </div>
