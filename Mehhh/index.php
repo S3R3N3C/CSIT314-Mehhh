@@ -86,8 +86,10 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php" class="navbar-brand">RealtyRealm</a>
+    <div class="navbar">
+        <!-- <a href="index.php" class="navbar-brand">RealtyRealm</a> -->
+        <a href="#"><img src="img/logo.jpg"  style="width: 200px; height: auto;" ></a> <!-- #: current -->
+        
         <ul class="navbar-nav">
             <li><a href="Boundary/Buyer/viewPropertyListings.php">BUY</a></li>
             <li><a href="#">SELL</a></li>
@@ -96,7 +98,7 @@
                 <a href="Boundary/User/userLogin.php">LOGIN</a>
             </li>
         </ul>
-    </nav>
+    </div>
 
 </body>
 </html>
