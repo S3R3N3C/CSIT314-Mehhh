@@ -121,7 +121,8 @@ function loginAccount($username, $password)
 <html>
 
 <body>
-    <div class="backgroundImage">
+    <div>
+        <a href="../../index.php"><img src="../../img/logo.jpg"  style="width: 200px; height: auto;" ></a> <!--default page-->
         <div class="form-box">
             <h2 class="login-title">Login</h2>
             <form class="user-input" method="POST">
