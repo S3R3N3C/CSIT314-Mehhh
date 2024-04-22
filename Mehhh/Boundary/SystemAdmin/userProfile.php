@@ -110,6 +110,13 @@ if (isset($_POST['search'])) {
                 </td>
             </tr>
         <?php } ?>
+        <tfoot>
+            <tr>
+                <th>User Profile</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </tfoot>
     </table>
     <br>
 </div>
