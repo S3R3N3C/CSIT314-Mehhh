@@ -89,7 +89,7 @@
     <nav class="navbar">
         <a href="index.php" class="navbar-brand">RealtyRealm</a>
         <ul class="navbar-nav">
-            <li><a href="Boundary/RealEstateAgent/viewPropertyListings.php">BUY</a></li>
+            <li><a href="Boundary/Buyer/viewPropertyListings.php">BUY</a></li>
             <li><a href="#">SELL</a></li>
             <li><a href="#">MORTGAGE</a></li>
             <li>
