@@ -9,7 +9,7 @@ To run:
 1. START Apache, MYSQL
 2. MYSQL - Admin to open phpmyadmin
 3. Extract the Mehhh.zip - Paste the Mehhh into the C:\xampp\htdocs
-4. Updated codes are to be retrieved here https://github.com/S3R3N3C/CSIT314-Mehhh/Mehhh
+4. Updated codes are to be retrieved here [https://github.com/S3R3N3C/CSIT314-Mehhh/Mehhh](https://github.com/S3R3N3C/CSIT314-Mehhh/tree/main/Mehhh)
 
 **phpMyAdmin** 
 1. Import the realtyrealm.sql
