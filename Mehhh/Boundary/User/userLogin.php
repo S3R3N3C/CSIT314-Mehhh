@@ -6,45 +6,24 @@ $password = "";
 $e1 = "";
 
 if (isset($_POST["login"])) {
-    validateUserName($e1);
-    validatePassword($e2);
-    if (empty($e1) && empty($e2)) {
-        loginAccount($_POST["username"], $_POST["password"]);
-    }
-}
+    $userLoginController = new userLoginController();
+    $loginResult = $userLoginController->loginUser($_POST["username"], $_POST["password"]);
 
-function validateUserName(&$e1)
-{
-    global $username;
-    $username = trim($_POST["username"]);
-    if (empty($username)) {
-        $e1 = "Please fill in Username";
-    }
-
-}
-
-function validatePassword(&$e2)
-{
-    global $password;
-    $password = trim($_POST["password"]);
-    if (empty($password)) {
-        $e2 = "Please fill in password";
-    }
-}
-
-function loginAccount($username, $password)
-{
-    global $e1;
-    $cLGC = new userLoginController();
-    $results = $cLGC->loginAccount($username, $password);
-    if ($results == true) {
-        echo "Login Successful";
+    if (is_array($loginResult)) {
+        // If there are validation errors
+        $e1 = implode(", ", $loginResult);
     } else {
-        echo "Login Failed";
-        $e1 = "Please try again";
+        // If login was successful or failed
+        if ($loginResult == true) {
+            echo "Login Successful";
+        } else {
+            echo "Login Failed";
+            $e1 = "Please try again";
+        }
     }
 }
 ?>
+
 
 <style>
     *
