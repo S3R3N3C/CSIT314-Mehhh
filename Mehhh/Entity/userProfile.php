@@ -41,7 +41,7 @@ class UserProfile
             $result = mysqli_num_rows($checkuser);
             if ($result == 0) {
                 $addUserProfile = mysqli_query($conn, "INSERT INTO profiles (profilename) VALUES ('$profilename')") or die(mysqli_error($conn));
-                header('Location: userProfile.php');
+                header('Location: viewUserProfile.php');
                 return true;
             } else {
                 return false;
