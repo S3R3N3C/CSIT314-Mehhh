@@ -40,7 +40,7 @@ class UserAccount
 
              //System Admin
             if ($_SESSION['user_profile'] == 'System Admin') {
-                header('location: ../../Boundary/SystemAdmin/userAccount.php'); // default page: userProfile
+                header('location: ../../Boundary/SystemAdmin/viewUserAccount.php'); // default page: userProfile
             } 
 
             // Real Estate Agent
@@ -50,7 +50,7 @@ class UserAccount
             
             // Seller
             elseif ($_SESSION['user_profile'] == 'Seller') {
-                header('location: ../../Boundary/Seller/userProfile.php'); // " ":
+                header('location: ../../Boundary/Seller/viewUserProfile.php'); // " ":
             } 
             
             // Buyer
@@ -97,7 +97,7 @@ class UserAccount
         if ($result == 0) {
             $addUser = mysqli_query($conn, "INSERT INTO users (user_fullname, username, password, user_profile) 
                                     VALUES ('$user_fullname','$username','$password','$user_profile')") or die(mysqli_error($conn));
-            header('Location: userAccount.php');
+            header('Location: viewUserAccount.php');
             return true;
         } 
         else {
