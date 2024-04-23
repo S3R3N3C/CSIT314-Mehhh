@@ -1,12 +1,35 @@
 <?php
 include_once("../../Entity/UserAccount.php");
 
-class userLoginController
+class UserLoginController
 {
-    public function loginAccount($userName, $password)
+    public function loginUser($userName, $password)
     {
-        $c = new UserAccount();
-        $results = $c->loginAccount($userName, $password);
-        return $results;
+        $validationErrors = $this->validateCredentials($userName, $password);
+        
+        if (!empty($validationErrors)) {
+            return $validationErrors; // Return validation errors if any
+        }
+
+        $userAccount = new UserAccount();
+        $loginResult = $userAccount->loginAccount($userName, $password);
+        
+        return $loginResult;
+    }
+
+    private function validateCredentials($userName, $password)
+    {
+        $validationErrors = [];
+
+        if (empty($userName)) {
+            $validationErrors['username'] = "Please fill in Username";
+        }
+
+        if (empty($password)) {
+            $validationErrors['password'] = "Please fill in Password";
+        }
+
+        return $validationErrors;
     }
 }
+?>
