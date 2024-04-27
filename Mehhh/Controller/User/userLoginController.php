@@ -3,22 +3,22 @@ include_once("../../Entity/UserAccount.php");
 
 class UserLoginController
 {
-    public function loginUser($userName, $password): bool
+    public function loginUser($userName, $password, $user_profile): bool
     {
-        $validationErrors = $this->validateCredentials($userName, $password);
+        $validationErrors = $this->validateCredentials($userName, $password, $user_profile);
         
         if (!empty($validationErrors)) {
             return false; // Return false to indicate unsuccessful login
         }
     
         $userAccount = new UserAccount();
-        $loginResult = $userAccount->loginAccount($userName, $password);
+        $loginResult = $userAccount->loginAccount($userName, $password, $user_profile);
         
         return $loginResult;
     }
     
 
-    private function validateCredentials($userName, $password)
+    private function validateCredentials($userName, $password, $user_profile)
     {
         $validationErrors = [];
 
@@ -28,6 +28,10 @@ class UserLoginController
 
         if (empty($password)) {
             $validationErrors['password'] = "Please fill in Password";
+        }
+
+        if (!in_array($user_profile, ['1', '2', '3', '4'])) {
+            $validationErrors['user_profile'] = "Please select a valid role";
         }
 
         return $validationErrors;
