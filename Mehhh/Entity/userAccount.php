@@ -14,7 +14,7 @@ class UserAccount
     }
 
     // Default page when user login successfully
-    public function loginAccount($username, $password): bool
+    public function loginAccount($username, $password):bool
     {
         
         $conn = mysqli_connect(HOST, USER, PASS, DB);
@@ -40,22 +40,22 @@ class UserAccount
             $_SESSION['user_fullname'] = $user['user_fullname'];
 
              //System Admin
-            if ($_SESSION['user_profile'] == 'System Admin') {
+            if ($_SESSION['user_profile'] == 1) {
                 header('location: ../../Boundary/SystemAdmin/viewUserAccount.php'); // default page: userProfile
             } 
 
             // Real Estate Agent
-            elseif ($_SESSION['user_profile'] == 'Real Estate Agent') {
+            elseif ($_SESSION['user_profile'] == 2) {
                 header('location: ../../Boundary/RealEstateAgent/viewPropertyListings.php'); // " ": propertyListing
             } 
             
             // Seller
-            elseif ($_SESSION['user_profile'] == 'Seller') {
+            elseif ($_SESSION['user_profile'] == 3) {
                 header('location: ../../Boundary/Seller/viewUserProfile.php'); // " ":
             } 
             
             // Buyer
-            elseif ($_SESSION['user_profile'] == 'Buyer') {
+            elseif ($_SESSION['user_profile'] == 4) {
                 header('location: ../../Boundary/Buyer/viewPropertyListings.php'); // " ":
             }
             return true;
@@ -68,7 +68,7 @@ class UserAccount
     }
     
     // Method 1: View all user accounts
-    public function viewUserAccount(): array
+    public function viewUserAccount():array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB); // connection
         $query = "SELECT * FROM users ORDER BY username ASC"; // SQL query statement
@@ -90,7 +90,7 @@ class UserAccount
     }
 
     // 2. Create user account
-    public function createUserAccount($user_fullname, $username, $password, $user_profile): bool
+    public function createUserAccount($user_fullname, $username, $password, $user_profile):bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $checkuser = mysqli_query($conn, "SELECT user_id FROM users WHERE username='$username'");
@@ -107,7 +107,7 @@ class UserAccount
     }
 
     // 3. Update the user account details
-    public function updateUserAccount($user_id, $user_fullname, $username, $password, $user_profile): bool
+    public function updateUserAccount($user_id, $user_fullname, $username, $password, $user_profile):bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
 
@@ -129,7 +129,7 @@ class UserAccount
     }
 
     // 4. Check if user exists
-    private function checkUserExists($user_id): bool
+    private function checkUserExists($user_id):bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
@@ -179,7 +179,7 @@ class UserAccount
     }
 
     // 7. Search user account
-    function searchUserAccount($search): array
+    function searchUserAccount($search):array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $search = mysqli_real_escape_string($conn, $search);
@@ -196,7 +196,7 @@ class UserAccount
     }
 
     // 8. Delete user account
-    function deleteUserAccount($user_id): bool
+    function deleteUserAccount($user_id):bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
@@ -211,7 +211,7 @@ class UserAccount
         }
     }
 
-    public function getUserDetail($user_id): array
+    public function getUserDetail($user_id):array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
 
