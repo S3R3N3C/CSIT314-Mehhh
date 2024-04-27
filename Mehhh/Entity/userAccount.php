@@ -1,6 +1,7 @@
 <?php
 
-include_once("../../config.php");
+include_once(__DIR__ . "/../config.php");
+
 session_start();
 
 class UserAccount
@@ -13,7 +14,7 @@ class UserAccount
     }
 
     // Default page when user login successfully
-    public function loginAccount($username, $password):bool
+    public function loginAccount($username, $password): bool
     {
         
         $conn = mysqli_connect(HOST, USER, PASS, DB);
@@ -66,8 +67,8 @@ class UserAccount
                
     }
     
-    // Method 1: Get all user accounts
-    public function getUserAccount():array
+    // Method 1: View all user accounts
+    public function viewUserAccount(): array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB); // connection
         $query = "SELECT * FROM users ORDER BY username ASC"; // SQL query statement
@@ -88,8 +89,8 @@ class UserAccount
         return $userAccounts;
     }
 
-    // 2. Add user account
-    public function addUserAccount($user_fullname, $username, $password, $user_profile):bool
+    // 2. Create user account
+    public function createUserAccount($user_fullname, $username, $password, $user_profile): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $checkuser = mysqli_query($conn, "SELECT user_id FROM users WHERE username='$username'");
@@ -97,7 +98,7 @@ class UserAccount
         if ($result == 0) {
             $addUser = mysqli_query($conn, "INSERT INTO users (user_fullname, username, password, user_profile) 
                                     VALUES ('$user_fullname','$username','$password','$user_profile')") or die(mysqli_error($conn));
-            header('Location: viewUserAccount.php');
+            //header('Location: createUserAccount.php');
             return true;
         } 
         else {
@@ -106,7 +107,7 @@ class UserAccount
     }
 
     // 3. Update the user account details
-    public function updateUserAccount($user_id, $user_fullname, $username, $password, $user_profile):bool
+    public function updateUserAccount($user_id, $user_fullname, $username, $password, $user_profile): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
 
@@ -128,7 +129,7 @@ class UserAccount
     }
 
     // 4. Check if user exists
-    private function checkUserExists($user_id):bool
+    private function checkUserExists($user_id): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
@@ -144,27 +145,41 @@ class UserAccount
     }
 
     // 5. Suspend user account
-    public function suspendUserAccount($user_id): void
+    public function suspendUserAccount($user_id): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("UPDATE `users` SET `user_status` = 'Inactive' WHERE `user_id` = ?");
         $stmt->bind_param("i", $user_id);
-        $stmt->execute();
+        $result = $stmt->execute();
         $stmt->close();
+        
+        // Check if the operation was successful
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
+    
     // 6. Activate user account
-    public function activateUserAccount($user_id): void
+    public function activateUserAccount($user_id): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("UPDATE `users` SET `user_status` = 'Active' WHERE `user_id` = ?");
         $stmt->bind_param("i", $user_id);
-        $stmt->execute();
+        $result = $stmt->execute();
         $stmt->close();
+        
+        // Check if the operation was successful
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // 7. Search user account
-    function searchUserAccount($search):array
+    function searchUserAccount($search): array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $search = mysqli_real_escape_string($conn, $search);
@@ -181,7 +196,7 @@ class UserAccount
     }
 
     // 8. Delete user account
-    function deleteUserAccount($user_id):bool
+    function deleteUserAccount($user_id): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
@@ -196,7 +211,7 @@ class UserAccount
         }
     }
 
-    public function getUserDetail($user_id):array
+    public function getUserDetail($user_id): array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
 
