@@ -117,7 +117,7 @@ if (isset($_GET['delete_success'])) {
                     <th>Full Name</th>
                     <th>User Name</th>
                     <th>Password</th>
-                    <th>Profile</th>
+                    <th>Role</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -144,7 +144,7 @@ if (isset($_GET['delete_success'])) {
                     <th>Full Name</th>
                     <th>User Name</th>
                     <th>Password</th>
-                    <th>Profile</th>
+                    <th>Role</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
