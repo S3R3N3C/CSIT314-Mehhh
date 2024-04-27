@@ -13,7 +13,7 @@ class UserProfile
     }
 
     // Method 1: Get all user profiles
-    public function getUserProfiles():array
+    public function viewUserProfiles(): array
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $query = "SELECT userprofile_id, profilename, status FROM profiles ORDER BY profilename ASC";
@@ -29,8 +29,8 @@ class UserProfile
         return $userProfiles;
     }
 
-    // 2: Add user profile
-    public function addUserProfile($profilename):bool
+    // 2: Create user profile
+    public function createUserProfile($profilename): bool
     {
         if (!isset($profilename)) {
             return false;
@@ -41,7 +41,7 @@ class UserProfile
             $result = mysqli_num_rows($checkuser);
             if ($result == 0) {
                 $addUserProfile = mysqli_query($conn, "INSERT INTO profiles (profilename) VALUES ('$profilename')") or die(mysqli_error($conn));
-                header('Location: viewUserProfile.php');
+                //header('Location: viewUserProfile.php');
                 return true;
             } else {
                 return false;
@@ -52,14 +52,22 @@ class UserProfile
     }
 
     // 4. Activate user profile    
-    public function activateUserProfile($userprofile_id): void
+    public function activateUserProfile($userprofile_id): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $sql = "UPDATE profiles SET status = 'Active' WHERE userprofile_id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $userprofile_id);
-        $stmt->execute();
+        $result = $stmt->execute();
         $stmt->close();
+        
+        // Check if the operation was successful
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 
     // 4. Suspend user profile
@@ -69,12 +77,19 @@ class UserProfile
         $sql = "UPDATE profiles SET status = 'Inactive' WHERE userprofile_id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $userprofile_id);
-        $stmt->execute();
-        return $stmt->affected_rows;
+        $result = $stmt->execute();
+        $stmt->close();
+        
+        // Check if the operation was successful
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // 5. Update user profile
-    public function updateUserProfile($userprofile_id, $profilename) :bool
+    public function updateUserProfile($userprofile_id, $profilename): bool
     {
         $conn = mysqli_connect(HOST, USER, PASS, DB);
         $stmt = $conn->prepare("UPDATE profiles SET profilename = ? WHERE userprofile_id = ?");
