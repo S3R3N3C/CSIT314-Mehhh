@@ -14,8 +14,7 @@ To run:
 1. Import the realtyrealm.sql
 
 
-**AS FOR NOW**
-to run and see the website: http://localhost/mehhh
+**To run**
+use this website: http://localhost/mehhh
 * TAKE NOTE: CSS might not work in CHROME so need to switch browser (EDGE, FIREFOX, etc.)
 
-**--** Mehhh.zip OLD VER **--**
