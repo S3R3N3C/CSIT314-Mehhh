@@ -1,0 +1,231 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#title {
+  background-color: #ffd700;
+  color: #fff;
+}
+
+h1, h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.container-fluid {
+  padding: 1% 5% 1%;
+}
+
+/* Navigation Bar */
+
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+  font-weight: 300;
+  color:black;
+}
+
+.nav-icon {
+  color: black;
+  font-size: 1.2rem;
+  padding-left: 2.5rem;
+}
+
+/* Row */
+#row {
+  padding: 7% 15%;
+  background-image: url("/images/condo.jpg");
+}
+
+/* Features Section */
+#features {
+  padding: 3% 10%;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-sections {
+  text-align: center;
+  padding: 4.5%
+}
+
+.icons {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+
+/*Pricing Cards section */
+#pricing {
+  padding: 100px;
+  text-align: center;
+}
+
+.bcard {
+  width: 100%;
+  padding: 3% 10%;
+}
+
+.pricing-cards {
+  padding-top: 3%;
+}
+
+/* Cta Section */
+#cta{
+  text-align: center;
+  color: black;
+  background-color:#ffd700;
+  padding: 7% 12%;
+}
+
+.cta-btn{
+  margin: 3% 2% 0 2%;
+}
+
+/* Footer section */
+#footer{
+  text-align: center;
+  padding: 4% 0 2% 0;
+}
+
+.sm-logos{
+  padding: 0 1% 2% 1%;
+}
+/* Responsiveness querys */
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+  /* Basic CSS for property listing */
+  #search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Set the height of the container to full viewport height */
+  }
+
+  .search-form {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  #searchInput {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 250px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  button {
+    background-color: #808080;
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Font Awesome icons */
+  .fas {
+    font-size: 16px;
+  }
+
+  .property-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+  .property {
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    padding: 10px;
+    overflow: hidden;
+    width: 30%; /* Adjust width to fit two properties in one row */
+  }
+  .property img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+  }
+  .property-details {
+    overflow: hidden;
+  }
+  .property-details h3 {
+    margin-top: 10;
+  }
+  @media (max-width: 768px) {
+    .property-row {
+      flex-direction: column; /* Stack properties vertically on smaller screens */
+    }
+    .property {
+      width: 100%; /* Make each property take up the full width on smaller screens */
+      margin: 20 20 20px; /* Adjust margin for spacing */
+    }
+  }
+
+  .navbar {
+    background-color: #f8d800; /* Change background color */
+    overflow: hidden;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1e1d1d; /* Change text color */
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .navbar-nav li {
+    padding: 0 10px;
+  }
+  
+  .navbar-nav li a {
+    color: #1e1d1d; /* Change link color */
+    font-weight: bold;
+  }
+  
+  .navbar-nav li a:hover {
+    color: #000; /* Change link color on hover */
+  }
+  

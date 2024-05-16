@@ -1,0 +1,594 @@
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/* Top section*/
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/* Logo styling */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e1d1d; /* Change text color */
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+.topnav {
+    overflow: hidden;
+}
+
+  /* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    color: #1e1d1d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 90%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.topnav a:hover {
+  background-image: linear-gradient(to right, #660080, #96dcac);
+  background-position: right center;
+  color: white;
+  text-decoration: none;
+}
+
+.topnav a.active {
+  color: #00802f;
+}
+  
+  /* Change the color of links on hover */
+.topnav a1:hover {
+  background-image:linear-gradient(to right, #660080, #96dcac) ;
+  background-position:right center;
+  color: white;
+  text-decoration: none;
+}
+
+.topnav a1{
+  float: right;
+  color: #ffffff;
+  background-color: green; /* Change to your desired background color */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 90%;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 25px;
+}
+
+  /* Add a color to the active/current link */
+.topnav a1.active {
+  color: #00802f;
+}
+
+
+
+.container1 {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 30ch auto;
+    column-gap: 10%;
+    padding-top: 1%;
+   }
+
+.container1 img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h2 {
+  margin: 25px 0 20px 0;
+  font-size: 17px;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/* Body sectioning */
+/* Form styling */
+
+.white-box{
+  background-color: white;
+  color: black; 
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+}
+
+body{
+  padding-top: 0%;
+  padding-bottom:0%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-image: url("Images/background.jpg");
+  overflow: auto;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form{
+    display: inline-block;
+}
+
+.container {
+ display: grid;
+ align-items: center; 
+ grid-template-columns: 50ch auto;
+ column-gap: 10%;
+}
+
+.container img{
+  max-width: 100%;
+  max-height:100%;
+}
+
+.button {
+  background-color: white;
+  border: ridge #800000 ;
+  padding: 2%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+}
+
+.button:hover{
+  background-image:linear-gradient(to right, #008080, #DCAE96) ;
+  background-position:right center;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+}
+
+.button2 {
+  background-color: white;
+  border: ridge #800000 ;
+  padding: 1%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80%;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  width: 20%;
+  height: 100%;
+  margin-right: 2%;
+}
+
+.button2:hover{
+  background-image:linear-gradient(to right, #008080, #DCAE96) ;
+  background-position:right center;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+table {
+  border-collapse: separate;
+  
+}
+
+td, th {
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  padding-bottom: 1.5%;
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #777;
+}
+
+
+
+td{
+  font-size:15px;
+}
+
+t{
+  font-size:16px;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: white;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  bottom:5px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #800000 transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #800000 transparent;
+  bottom: 10px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color:black;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*--------------*/
+.form-box{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.form-box .profile{
+  font-size: 25px;
+  font-weight: 500;
+  color: #800000;
+  position: relative;
+}	
+
+form .input-box span.details{
+  display: block;
+}
+
+.user-details .input-box input{
+  width: 100%;
+  outline: none;
+  padding: 15px 0 5px;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #777;
+  background: transparent;
+}	
+    
+form .button input{
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #008080, #DCAE96);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+
+/*--------------------*/
+
+
+.row1 {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  flex: 25%;
+  margin-bottom: 20px;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 5%;
+}
+
+.container4 {
+  padding: 5px 20px 15px 20px;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 200%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.button3 {
+  color: black;
+  background-color: white;
+  border: ridge #800000 ;
+  padding: 10%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  width: 200%;
+}
+
+.button3:hover {
+  background-image:linear-gradient(to right, #008080, #DCAE96) ;
+  background-position:right center;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+}
+
+
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+span{
+  color: #800000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+}
+
+
+/*-----------------*/
+.button4 {
+  background-color: white;
+  border: ridge #800000 ;
+  padding: 5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  width: 120%;
+  height: 40%
+}
+
+.button4:hover{
+  background-image:linear-gradient(to right, #008080, #DCAE96) ;
+  background-position:right center;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+}
+
+.sections{
+  display:none;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 36px;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #800000;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: #800000;
+  color: #800000;
+  height: 25%;
+}
+
+.searchTerm:focus{
+  color: #800000;
+}
+
+.searchButton {
+  width: 40px;
+  height: 100%;
+  border: 1px solid #800000;
+  background: #800000;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+/*---------------------*/
+
+
+.toggle-button-cover
+{
+   
+    position: relative;
+    width: 5px;
+    height: 30px;
+    
+}
+
+.button-cover
+{
+    height: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.button-cover:before
+{
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #e3d8d7;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover, .knobs, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 30%;
+    width: 50px;
+    height: 20px;
+    
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.button.b2
+{
+    border-radius: 2px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #fceceb;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+
+/* Button 2 */
+#button-2 .knobs:before, #button-2 .knobs:after
+{
+    content: '';
+    position: absolute;
+    top: 0.3px;
+    left: 4px;
+    width: 15px;
+    height: 2px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #F44336;
+    border-radius: 50%;
+    transition: 0.3s ease all;
+}
+
+
+
+#button-2 .knobs:after
+{
+    right: -28px;
+    left: auto;
+    background-color: #48b47b;
+}
+
+#button-2 .checkbox:checked + .knobs:before
+{
+    left: -28px;
+}
+
+#button-2 .checkbox:checked + .knobs:after
+{
+    right: 4px;
+}
+
+#button-2 .checkbox:checked ~ .layer
+{
+    background-color: #d0fad0;
+}
+
+
